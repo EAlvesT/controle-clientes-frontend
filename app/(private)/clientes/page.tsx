@@ -5,6 +5,8 @@ export default function ClientesPage() {
         <>
             <TituloSecoes
                 titulo="CLIENTES"
+                localUtilizado="clientes"
+                textoBotao="Cadastrar cliente"
             />
         </>
     )

@@ -5,6 +5,8 @@ export default function ProjetosPage() {
         <>
             <TituloSecoes
                 titulo="PROJETOS"
+                localUtilizado="projetos"
+                textoBotao="Criar projeto"
             />
         </>
     )

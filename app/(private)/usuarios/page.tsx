@@ -5,6 +5,8 @@ export default function UsuariosPage() {
         <>
             <TituloSecoes
                 titulo="USUÁRIOS"
+                localUtilizado="usuarios"
+                textoBotao="Cadastrar usuário"
             />
         </>
     )
