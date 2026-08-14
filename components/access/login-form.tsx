@@ -58,7 +58,7 @@ export function LoginContent() {
             </div>
 
             <div className="w-full flex items-start justify-center flex-col gap-2">
-                <Label>Email:</Label>
+                <Label>Senha:</Label>
                 <div className="relative w-full">
                     <Input
                         type={isVisible ? "text" : "password"}
