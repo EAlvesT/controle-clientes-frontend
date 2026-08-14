@@ -1,7 +1,11 @@
+import { TituloSecoes } from "@/components/layout/titulo-secoes";
+
 export default function ProjetosPage() {
     return (
         <>
-            <h1>Página PROJETOS</h1>
+            <TituloSecoes
+                titulo="PROJETOS"
+            />
         </>
     )
 }

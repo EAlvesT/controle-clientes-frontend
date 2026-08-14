@@ -1,7 +1,11 @@
+import { TituloSecoes } from "@/components/layout/titulo-secoes";
+
 export default function UsuariosPage() {
     return (
         <>
-            <h1>Página USUÁRIOS</h1>
+            <TituloSecoes
+                titulo="USUÁRIOS"
+            />
         </>
     )
 };

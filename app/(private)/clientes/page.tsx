@@ -1,7 +1,11 @@
+import { TituloSecoes } from "@/components/layout/titulo-secoes";
+
 export default function ClientesPage() {
     return (
         <>
-            <h1>Página de clientes</h1>
+            <TituloSecoes
+                titulo="CLIENTES"
+            />
         </>
     )
 }
