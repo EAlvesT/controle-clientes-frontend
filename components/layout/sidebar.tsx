@@ -23,7 +23,7 @@ export function Sidebar({ children }: SidebarProps) {
         <>
             <div className="flex items-start justify-start flex-col gap-4">
                 <div className="flex items-center justify-between gap-3">
-                    <h1 className="text-lg font-semibold">Controle de clientes</h1>
+                    <h1 className="text-lg font-semibold text-background">Controle de clientes</h1>
 
                     <button
                         type="button"
@@ -40,7 +40,7 @@ export function Sidebar({ children }: SidebarProps) {
                         <li key={link.id}>
                             <Link
                                 href={link.href}
-                                className={clsx("flex items-center gap-2 rounded-md border border-black/10 px-3 py-2 hover:bg-background/20", {
+                                className={clsx("flex items-center gap-2 rounded-md border border-black/10 px-3 py-2 hover:bg-background/20 text-background", {
                                     "bg-background/40": pathname.startsWith(link.href)
                                 })}
                                 onClick={() => setIsOpen(false)}
@@ -88,7 +88,7 @@ export function Sidebar({ children }: SidebarProps) {
             <AnimatePresence>
                 {isOpen && (
                     <motion.aside
-                        className="fixed inset-y-0 left-0 z-40 flex w-72 flex-col justify-between gap-4 bg-white px-4 py-4 shadow-lg dark:text-background md:hidden"
+                        className="fixed inset-y-0 left-0 z-40 flex w-72 flex-col justify-between gap-4 bg-foreground px-4 py-4 shadow-lg dark:text-background md:hidden"
                         initial={{ x: "-100%", opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: "-100%", opacity: 0 }}

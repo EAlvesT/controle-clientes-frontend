@@ -14,8 +14,8 @@ import { LoginFormData } from "@/schemas/login";
 
 export function LoginContent() {
     const { register, formState: { errors }, handleSubmit } = useLoginForm();
-    const [isVisible, setIsVisible] = useState(false);
     const { mutate, isPending } = useLoginMutation();
+    const [isVisible, setIsVisible] = useState(false);
 
     function handleLogin(data: LoginFormData) {
         mutate(data, {
@@ -66,12 +66,14 @@ export function LoginContent() {
                         placeholder="********"
                         className="pr-12"
                     />
-                    <div
+                    <button
+                        type="button"
+                        aria-label={isVisible ? "Ocultar senha" : "Exibir senha"}
                         className="absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer"
-                        onClick={() => setIsVisible(!isVisible)}
+                        onClick={() => setIsVisible((prev) => !prev)}
                     >
                         {isVisible ? <EyeClosed /> : <Eye />}
-                    </div>
+                    </button>
                 </div>
                 {errors?.senha && (
                     <p className="text-red-500 text-sm">{errors.senha?.message}</p>
