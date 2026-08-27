@@ -16,6 +16,7 @@ import { RegisterFormData } from "@/schemas/register";
 export function RegisterContent() {
     const { register, formState: { errors }, handleSubmit } = useRegisterForm();
     const [isVisible, setIsVisible] = useState(false);
+    const [confirmIsVisible, setConfirmIsVisible] = useState(false);
     const { mutate, isPending } = useRegisterMutation();
 
     function handleRegister(data: RegisterFormData) {
@@ -87,7 +88,7 @@ export function RegisterContent() {
                     />
                     <div
                         className="absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer"
-                        onClick={() => setIsVisible(!isVisible)}
+                        onClick={() => setIsVisible((prev) => !prev)}
                     >
                         {isVisible ? <EyeClosed /> : <Eye />}
                     </div>
@@ -101,16 +102,16 @@ export function RegisterContent() {
                 <Label>Confirma senha:</Label>
                 <div className="relative w-full">
                     <Input
-                        type={isVisible ? "text" : "password"}
+                        type={confirmIsVisible ? "text" : "password"}
                         {...register("confirmaSenha")}
                         placeholder="********"
                         className="pr-12"
                     />
                     <div
                         className="absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer"
-                        onClick={() => setIsVisible(!isVisible)}
+                        onClick={() => setConfirmIsVisible((prev) => !prev)}
                     >
-                        {isVisible ? <EyeClosed /> : <Eye />}
+                        {confirmIsVisible ? <EyeClosed /> : <Eye />}
                     </div>
                 </div>
                 {errors?.confirmaSenha && (
