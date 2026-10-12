@@ -6,6 +6,8 @@
   --accessButton: #121212;
 
   --fundo-branco: #ededed;
+
+  --fundo-botao-forms: #39008f;
 };
 
 @theme {
@@ -14,6 +16,7 @@
   --font-geist-sans: var(--font-geist-sans);
   --color-access-buton: var(--accessButton);
   --color-fundo-branco: var(--fundo-branco);
+  --color-fundo-botao-forms: var(--fundo-botao-forms);
 };
 
 body {

@@ -60,7 +60,7 @@ export function Sidebar({ children }: SidebarProps) {
     );
 
     return (
-        <div className="flex min-h-screen w-full bg-background text-foreground">
+        <div className="flex h-dvh w-full bg-background text-foreground overflow-hidden">
             <button
                 type="button"
                 onClick={() => setIsOpen(true)}
@@ -80,7 +80,7 @@ export function Sidebar({ children }: SidebarProps) {
             )}
 
             {/* Desktop */}
-            <aside className="hidden md:flex md:static md:z-auto md:w-64 md:shadow-none flex-col justify-between gap-4 bg-white px-4 py-4 dark:text-background">
+            <aside className="hidden h-full shrink-0 md:flex md:static md:z-auto md:w-64 md:shadow-none flex-col justify-between gap-4 bg-white px-4 py-4 dark:text-background">
                 {navContent}
             </aside>
 
@@ -99,7 +99,7 @@ export function Sidebar({ children }: SidebarProps) {
                 )}
             </AnimatePresence>
 
-            <main className="min-w-0 flex-1 px-4 py-16 md:px-6 md:py-6">
+            <main className="min-w-0 min-h-0 flex-1 px-4 py-16 md:px-6 md:py-6 overflow-y-auto">
                 {children}
             </main>
         </div>
