@@ -12,10 +12,10 @@ interface ButtonFormsProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variants: Record<ButtonVariants, string> = {
-    primary: "bg-fundo-botao-forms text-white hover:bg-fundo-botao-forms/80",
-    secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300",
-    danger: "bg-red-600 text-white hover:bg-red-700",
-    outline: "border border-fundo-botao-forms text-purple-600 hover:bg-purple-50",
+    primary: "bg-fundo-botao-forms text-white hover:bg-fundo-botao-forms/80 disabled:bg-fundo-botao-forms/50",
+    secondary: "bg-gray-300 text-gray-900 hover:bg-gray-300 disabled:bg-gray-200",
+    danger: "bg-red-600 text-white hover:bg-red-700 disabled:bg-red-400",
+    outline: "border border-fundo-botao-forms text-purple-600 hover:bg-purple-50 disabled:bg-fundo-botao-forms/40",
 }
 
 const sizes: Record<ButtonSize, string> = {
@@ -36,7 +36,7 @@ export function ButtonForms({
         <button
             type={type}
             className={clsx(
-                "w-full rounded-lg font-medium transition-colors cursor-pointer",
+                "w-full rounded-lg font-medium transition-colors cursor-pointer disabled:cursor-not-allowed",
                 variants[variant],
                 sizes[size],
                 className

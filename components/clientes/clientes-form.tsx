@@ -25,6 +25,19 @@ export interface ClienteFormProps {
 export function ClienteForm({ mode, defaultValues }: ClienteFormProps) {
     const somenteLeitura = mode === "view";
     const { register, handleSubmit, formState: { errors }, reset } = useCreateClienteForm();
+    const isPending = false;
+
+    function aplicaTextoBotao() {
+        if (mode === "edit") {
+            return isPending ? "Salvando alterações..." : "Salvar alterações"
+        };
+
+        if (mode === "create") {
+            return isPending ? "Cadastrando cliente..." : "Cadastrar cliente"
+        };
+
+        return "";
+    };
 
     function handleCreateCliente(data: CreateClienteFormData) {
         console.log("Enviando dados:")
@@ -36,7 +49,8 @@ export function ClienteForm({ mode, defaultValues }: ClienteFormProps) {
             className="w-full px-4 py-6 rounded-lg bg-white text-black"
             onSubmit={handleSubmit(handleCreateCliente)}
         >
-            <div className="w-full flex items-center justify-center flex-col gap-4 md:gap-6">
+            <div className="w-full flex items-start justify-center flex-col gap-4 md:gap-6">
+                <p className="text-xs text-red-500 font-light">Campos marcados com * são <b>obrigatórios</b>.</p>
 
                 <div className="relative w-full px-2 py-3 flex items-center justify-center flex-col gap-2 border border-slate-300 rounded-lg">
                     <span className="absolute px-2 top-0 left-4 bg-white text-sm -translate-y-1/2 text-slate-400 font-light">
@@ -175,7 +189,12 @@ export function ClienteForm({ mode, defaultValues }: ClienteFormProps) {
                     )}
                 </div>
 
-                <ButtonForms variant="primary">Cadastrar</ButtonForms>
+                <ButtonForms
+                    variant="primary"
+                    disabled={isPending}
+                >
+                    {!somenteLeitura && aplicaTextoBotao()}
+                </ButtonForms>
             </div>
         </form>
     )
