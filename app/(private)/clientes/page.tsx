@@ -17,7 +17,8 @@ export default function ClientesPage() {
             updated_at: new Date(),
             contato_2: "3524654651",
             descricao: `Uma descrição do cliente número ${index + 1}`,
-            email_2: "testando2@teste.com"
+            email_2: "testando2@teste.com",
+            telefone: "54212854584",
         }
     });
 
